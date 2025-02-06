@@ -1,10 +1,10 @@
 import React from 'react';
 import { View, Text, TouchableOpacity, FlatList, StyleSheet, Image } from 'react-native';
-import { FontAwesome } from '@expo/vector-icons'; // Используем иконки FontAwesome для сердца
+import { FontAwesome } from '@expo/vector-icons'; 
 
 const FavouriteScreen = ({ favorites, addToFavorites }) => {
 
-  // Рендеринг каждого товара в избранном
+  
   const renderItem = ({ item }) => (
     <View style={styles.itemContainer}>
       <Image source={{ uri: item.image }} style={styles.image} />
@@ -13,7 +13,7 @@ const FavouriteScreen = ({ favorites, addToFavorites }) => {
         <Text style={styles.price}>${item.price}</Text>
       </View>
       <TouchableOpacity
-        onPress={() => addToFavorites(item)} // При клике на сердце добавляем/удаляем товар из избранного
+        onPress={() => addToFavorites(item)} 
       >
         <FontAwesome
           name={favorites.some(fav => fav.id === item.id) ? 'heart' : 'heart-o'}

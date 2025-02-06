@@ -28,7 +28,6 @@ const ProductDetailScreen = ({ route, navigation, addToCart, addToFavorites }) =
       <Text style={styles.price}>{product.price} USD</Text>
       <Text style={styles.description}>{product.description}</Text>
 
-      {/* Кнопка "Добавить в корзину" */}
       <TouchableOpacity
         style={styles.cartButton}
         onPress={() => addToCart(product)}
@@ -36,7 +35,6 @@ const ProductDetailScreen = ({ route, navigation, addToCart, addToFavorites }) =
         <Text style={styles.buttonText}>Добавить в корзину</Text>
       </TouchableOpacity>
 
-      {/* Кнопка "Добавить в избранное" */}
       <TouchableOpacity
         style={styles.favoritesButton}
         onPress={() => addToFavorites(product)}
@@ -44,7 +42,6 @@ const ProductDetailScreen = ({ route, navigation, addToCart, addToFavorites }) =
         <Text style={styles.buttonText}>Добавить в избранное</Text>
       </TouchableOpacity>
 
-      {/* Кнопка "Назад" */}
       <TouchableOpacity
         style={styles.backButton}
         onPress={() => navigation.goBack()}

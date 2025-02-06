@@ -14,7 +14,7 @@ import {
 const HomeScreen = ({ navigation, addToCart, addToFavorites, favorites = [] }) => {
   const [products, setProducts] = useState([]);
   const [categories, setCategories] = useState([]);
-  const [selectedCategory, setSelectedCategory] = useState(""); // состояние выбранной категории
+  const [selectedCategory, setSelectedCategory] = useState(""); 
   const [isCategoryModalVisible, setCategoryModalVisible] = useState(false);
 
   useEffect(() => {
@@ -35,9 +35,7 @@ const HomeScreen = ({ navigation, addToCart, addToFavorites, favorites = [] }) =
 
   return (
     <SafeAreaView style={styles.container}>
-      {/* Фильтрация и сортировка */}
       <View style={styles.filterSortContainer}>
-        {/* Фильтр по категориям */}
         <TouchableOpacity
           style={styles.filterButton}
           onPress={() => setCategoryModalVisible(true)}
@@ -47,7 +45,6 @@ const HomeScreen = ({ navigation, addToCart, addToFavorites, favorites = [] }) =
           </Text>
         </TouchableOpacity>
 
-        {/* Модальное окно выбора категории */}
         <Modal
           visible={isCategoryModalVisible}
           animationType="slide"
@@ -58,7 +55,7 @@ const HomeScreen = ({ navigation, addToCart, addToFavorites, favorites = [] }) =
               <TouchableOpacity
                 style={styles.modalItem}
                 onPress={() => {
-                  setSelectedCategory(""); // сбрасываем категорию
+                  setSelectedCategory(""); 
                   setCategoryModalVisible(false);
                 }}
               >
@@ -69,7 +66,7 @@ const HomeScreen = ({ navigation, addToCart, addToFavorites, favorites = [] }) =
                   key={category}
                   style={styles.modalItem}
                   onPress={() => {
-                    setSelectedCategory(category); // устанавливаем выбранную категорию
+                    setSelectedCategory(category); 
                     setCategoryModalVisible(false);
                   }}
                 >
@@ -80,7 +77,6 @@ const HomeScreen = ({ navigation, addToCart, addToFavorites, favorites = [] }) =
           </View>
         </Modal>
 
-        {/* Кнопки сортировки */}
         <View style={styles.sortContainer}>
           <TouchableOpacity
             onPress={() =>
@@ -99,7 +95,6 @@ const HomeScreen = ({ navigation, addToCart, addToFavorites, favorites = [] }) =
         </View>
       </View>
 
-      {/* Список товаров */}
       <FlatList
         data={filteredProducts}
         renderItem={({ item }) => (

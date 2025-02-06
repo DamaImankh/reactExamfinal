@@ -3,12 +3,10 @@ import { View, Text, TouchableOpacity, StyleSheet, FlatList, Image } from 'react
 
 const CartScreen = ({ cart, setCart }) => {
 
-  // Удаление товара из корзины
   const removeFromCart = (productId) => {
     setCart((prev) => prev.filter(item => item.id !== productId));
   };
 
-  // Увеличение количества товара
   const increaseQuantity = (productId) => {
     setCart((prev) =>
       prev.map(item =>
@@ -17,7 +15,6 @@ const CartScreen = ({ cart, setCart }) => {
     );
   };
 
-  // Уменьшение количества товара
   const decreaseQuantity = (productId) => {
     setCart((prev) =>
       prev.map(item =>
@@ -28,7 +25,7 @@ const CartScreen = ({ cart, setCart }) => {
     );
   };
 
-  // Общая сумма
+  
   const getTotalPrice = () => {
     return cart.reduce((total, item) => total + item.price * item.quantity, 0).toFixed(2);
   };
